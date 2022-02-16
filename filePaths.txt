@@ -1,0 +1,36 @@
+Path resolutions in Node Js is achieved through two modules fs and Path 
+The most common methods of fs that are used are : - 
+
+path.join ---used to join several string parameters into one path 
+e.g path.join('dir','fleet','navigation') ----- dir/fleet/navigation/
+
+path.relative --- Given two absolute paths , calculates the relative paths
+
+path.resolve ---Takes string arguments then returns the path that involves 
+navigating into the path of the strings passed e.g path.resolve('foo','bread','level')
+becomes '/foo/bread/level' 
+
+path.normalize --- Takes paths and removes extra slashes,for instance path.normalize('/foo/../bar//baz')
+would return '/bar/baz'
+
+
+The path deconstructors are path.parse, path.extname, path.dirname and path.basename. 
+
+In 'fs' module all syncronous methods end with sync all others are asynchronous
+
+When reading large files use streams,it's advised upon.Use fs.read
+
+To get file metadata you use the following methods : - 
+
+fs.stat,fs.statSync,fs.promises.stat 
+fs.lstat,fs.lstatSync,fs.promises.lstat
+
+The difference between stat and lstat is stat follows symbolic links,and lstat will get metadata for 
+symbolic link instead of following them.
+
+There are four time stats available for files.
+Access time
+Change time
+Modified time
+Birth time
+
